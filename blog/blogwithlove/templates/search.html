@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %} Search-Results {% endblock %}
+{% block body %}
+<div class="container">
+ <h1 class="text-center mt-3">Your Search Result For Year : <span style="color:red;">{{year}}</span></h1>
+ {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
+</div>
+<div class="container text-center">
+ <h1 id="title">Total World's GDP</h1>
+ <iframe src="https://data.worldbank.org/share/widget?contextual=default&end=2020&indicators=NY.GDP.MKTP.CD&start=1960&view=chart" width='400' height='300' frameBorder='0' scrolling="no" ></iframe>
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+setInterval(()=>{
+document.getElementById("title").innerHTML = "World's Total GDP (1960-2020)";
+},1000);
+setInterval(()=>{
+document.getElementById("title").innerHTML = "Total World's GDP";
+},1500);
+</script>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} Years {% endblock %}
+{% block body %}
+<h1 style="font-family:Pacifico; text-decoration:underline;" class="text-center mt-2">Select the Year</h1>
+{% for y in years %}
+<div style="margin-left:15px; display:inline; text-align:center;" class="text-center"  >
+   <button style="width:80px;" type="button" class="btn btn-lg btn-success text-center m-3"><a style="text-decoration:none; color:white;" href="/viewgdp/?year={{y.year}}">{{y.year}}</a></button>
+</div>
+{% endfor %}
+
+{% endblock %}

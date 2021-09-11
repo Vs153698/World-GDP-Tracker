@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block body %}
+<div class="container">
+ {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %}
+    </div>
+<div class="container">
+    <p class="text-center">To view GDP Year Wise <a href="/years">Click Here</a></p>
+</div>
+<div class="container text-center">
+ <h1 id="title">Total World's GDP</h1>
+ <iframe src="https://data.worldbank.org/share/widget?contextual=default&end=2020&indicators=NY.GDP.MKTP.CD&start=1960&view=chart" width='400' height='300' frameBorder='0' scrolling="no" ></iframe>
+
+</div>
+
+<div class="p-5  bg-light rounded-3">
+      <div class="container-fluid ">
+        <h1 class="display-5 fw-bold">About Us</h1>
+        <p class="col-md-8 fs-4">This website is created for education purpose, to get the detail about all countries GDP from 1960 to 2020 with total world GDP, with the help of attractive Graphs, So that everyone can understand easily.</p>
+          <button class="btn btn-primary btn-lg" type="button"><a style="text-decoration:none; color:white;" href="/about">More About Us</a></button>
+      </div>
+    </div>
+
+
+
+{% endblock %}
+{% block script %}
+<script>
+setInterval(()=>{
+document.getElementById("title").innerHTML = "World's Total GDP (1960-2020)";
+},1000);
+setInterval(()=>{
+document.getElementById("title").innerHTML = "Total World's GDP";
+},1500);
+</script>
+{% endblock %}
